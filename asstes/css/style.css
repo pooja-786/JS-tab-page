@@ -33,7 +33,7 @@
 
  .container {
     width: 540px;
-    height: 466px;
+    height: 100%;
     padding: 30px;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 20px;
@@ -48,6 +48,7 @@
     /* justify-content: space-around; */
     border-bottom: 1px solid rgba(229, 229, 229);
     gap: 24px;
+    position: relative;
    
      
        
@@ -65,8 +66,8 @@ font-family: "Inter", sans-serif;
         padding: 18px;
  }
 
-  .tab-box .tab-btn .active{
-    color: black;
+  .tab-box .tab-btn.active{
+    color: rgba(0,0,0,1);
   }
 
  .content-box {
@@ -75,10 +76,50 @@ font-family: "Inter", sans-serif;
 
  .content-box .content{
     display: none;
+    animation: moving .5s ease;
  }
 
- .content-box .content h2 {
+ @keyframes moving {
+    form{transform: translateX(50px); opacity:0;}
+         to{ transform: translateX(0px); opacity: 1;}
+ }
+ .content-box .content.active{
+    display: block;
+ }
+
+ .content-box .content .para-1 {
     margin-bottom: 10px;
+    font-family: "Inter"sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgba(128, 128, 128, 1);
+      
+ }
+
+ .para-2 {
+    margin-bottom: 10px;
+        font-family: "Inter" sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgba(128, 128, 128, 1);
+ }
+ 
+
+
+
+ .line {
+ position: absolute;
+background-color: rgba(18, 141, 255, 1);
+top:53px;
+left: 14px;
+width:90px;
+height:5px;
+border-radius: 10px;
+transition: all .3s ease-in-out;
+
+
  }
 
 
